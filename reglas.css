@@ -1,0 +1,95 @@
+/* ===== ESTILOS GENERALES (BASE MÓVIL) ===== */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, #d4f0fc, #a2e0f7); /* azul suave */
+    color: #023e8a; /* texto principal */
+}
+
+/* Encabezado y pie */
+.header, .pie { 
+    background: linear-gradient(90deg, #0077b6, #0096c7); /* azul oscuro */
+    color: #caf0f8; /* azul claro para el texto */
+    text-align: center; 
+    padding: 20px; 
+}
+
+/* Barra de navegación */
+.navbar { 
+    background: #48cae4; /* azul medio */
+}
+.menu { 
+    list-style: none; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+.menu li a { 
+    color: #023e8a; /* texto azul oscuro */
+    text-decoration: none; 
+    padding: 15px; 
+    display: block; 
+    border-radius: 6px;
+}
+.menu li a:hover {
+    background-color: #90e0ef; /* azul más claro al pasar mouse */
+    transition: 0.3s;
+}
+
+/* Contenedor principal FLEXIBLE */
+.contenedor-principal {
+    display: flex;
+    flex-wrap: wrap; /* EN MÓVIL: SE APILAN */
+    padding: 10px;
+}
+
+.contenido { 
+    flex: 1 1 100%; /* OCUPA 100% EN MÓVIL */
+    padding: 10px; 
+    background: #caf0f8; /* azul muy suave */
+    border-radius: 8px;
+}
+
+.lateral { 
+    flex: 1 1 100%; /* OCUPA 100% EN MÓVIL */
+    padding: 10px; 
+    background: #90e0ef; /* azul medio claro */
+    border-radius: 8px;
+}
+
+/* Imágenes fluidas (nunca se desbordan) */
+.img-fluida { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    margin: 10px 0;
+}
+
+/* ===== MEDIA QUERY PARA TABLETS Y ESCRITORIO (pantallas > 700px) ===== */
+@media (min-width: 700px) {
+    .contenedor-principal {
+        flex-wrap: nowrap; /* ESCRITORIO: UNO AL LADO DEL OTRO */
+    }
+    
+    .contenido {
+        flex: 3; /* Ocupa 3/4 del espacio */
+        margin-right: 10px;
+    }
+    
+    .lateral {
+        flex: 1; /* Ocupa 1/4 del espacio */
+    }
+}
+
+/* Ajustes adicionales para pantallas muy grandes */
+@media (min-width: 1200px) {
+    .contenedor-principal {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
